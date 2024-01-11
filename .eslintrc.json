@@ -20,7 +20,7 @@
         "camelcase": "error",
 
         // Enforce space before function parentheses
-        "space-before-function-paren": ["error", "always"],
+        "space-before-function-paren": ["error", "never"],
 
         // Enforce space around infix operators
         "space-infix-ops": "error",
@@ -38,7 +38,7 @@
         "curly": ["error", "all"],
 
         // Enforce the use of double quotes
-        "quotes": ["error", "double"],
+        "quotes": ["error", "single"],
 
         // Enforce max line length (similar to Java's typical convention)
         //"max-len": ["error", { "code": 100, "ignoreComments": true }],

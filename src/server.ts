@@ -1,21 +1,21 @@
-import fastify from 'fastify'
-import { knex } from './database'
+import fastify from 'fastify';
+import { knex } from './database';
 
-const app = fastify()
+const app = fastify();
 
-app.get('/tables', async (request, reply) => {
-  const tables = await knex('sqlite_schema').select('*')
+app.get('/tables', async(request, reply) => {
+    const tables = await knex('sqlite_schema').select('*');
 
-  return tables
-})
+    return tables;
+});
 
 app
-  .listen({
-    port: 3333,
-  })
-  .then((address) => {
-    console.log(`server listening on ${address}`)
-  })
-  .catch((err) => {
-    console.error(err)
-  })
+    .listen({
+        port: 3333,
+    })
+    .then((address) => {
+        console.log(`server listening on ${address}`);
+    })
+    .catch((err) => {
+        console.error(err);
+    });
