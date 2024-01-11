@@ -1,5 +1,62 @@
 {
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
     "extends": [
-        "@rocketseat/eslint-config/node"
-    ]
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        // Enforce consistent indentation (4 spaces)
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        
+        // Enforce braces style similar to Java (1TBS / Allman)
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+
+        // Require semicolons at the end of statements
+        "semi": ["error", "always"],
+
+        // Enforce camelCase naming convention
+        "camelcase": "error",
+
+        // Enforce space before function parentheses
+        "space-before-function-paren": ["error", "always"],
+
+        // Enforce space around infix operators
+        "space-infix-ops": "error",
+
+        // Enforce spaces inside parentheses
+        "space-in-parens": ["error", "never"],
+
+        // Enforce space before blocks
+        "space-before-blocks": "error",
+
+        // Enforce consistent return statements
+        "consistent-return": "error",
+
+        // Enforce using curly braces even when not necessary
+        "curly": ["error", "all"],
+
+        // Enforce the use of double quotes
+        "quotes": ["error", "double"],
+
+        // Enforce max line length (similar to Java's typical convention)
+        //"max-len": ["error", { "code": 100, "ignoreComments": true }],
+
+        // Additional TypeScript specific rules can be added here
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
 }
